@@ -1,0 +1,42 @@
+
+// Main colors used (https://www.color-blindness.com/color-name-hue/)
+$black: #000000;
+$white: #ffffff;
+$gainsBoro: #E4E4E4;
+$dimGray: #656565;
+$nobel: #9B9B9B;
+$nero: #1D1D1D;
+$silver: #C2C2C2;
+
+
+
+
+// Main font
+$sans: 'Archivo';
+
+
+// break point
+
+$lg: '900px';
+$xlg: '1440px';
+
+// general classes
+.hidden {
+    display: none;
+}
+
+
+@import "./preFlight.scss";
+@import './Components/layout.scss';
+@import './Components/navigation.scss';
+@import './Components/divider.scss';
+@import './Components/productCard.scss';
+@import './Components/button.scss';
+@import './Components/addToCartButton.scss';
+@import './Components/sort.scss';
+@import './Components/select.scss';
+@import './Components/checkBox.scss';
+@import './Components/filter.scss';
+@import './Components/mobileFilter.scss';
+@import './Components/loader.scss';
+@import './Pages/landingPage.scss';

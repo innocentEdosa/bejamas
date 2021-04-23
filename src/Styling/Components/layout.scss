@@ -1,0 +1,22 @@
+.layout__container {
+    font-family: $sans;
+    color: $black;
+}
+
+.layout__container--content {
+    padding: 0px 14px;
+}
+
+@media(min-width: $lg) {
+    .layout__container--content {
+        padding: 0px 79.5px;
+    } 
+}
+
+@media(min-width: $xlg) {
+    .layout__container--content {
+        padding: 0px 0px;
+        width: 1281px;
+        margin: 0 auto;
+    } 
+}

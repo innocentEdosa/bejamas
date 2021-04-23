@@ -1,0 +1,22 @@
+.button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:disabled,
+.button[disabled]{
+  cursor: default;
+}
+
+.button--primary {
+    background-color: $black;
+    color: $white;
+    font-weight: 500;
+font-size: 23px;
+line-height: 25px;
+text-align: center;
+letter-spacing: 0.07em;
+}

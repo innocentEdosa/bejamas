@@ -1,0 +1,45 @@
+.filter__category--title {
+    color: $black;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 37px;
+}
+
+.filter__category--list {
+    margin-top: 39px;
+    margin-bottom: 31px;
+    border-bottom: 1px solid $silver;
+}
+
+ .filter__category:last-child > .filter__category--list {
+    border-bottom: none;
+}
+
+.filter__category--listItems {
+    margin-bottom: 40px;
+}
+
+.filter__category--divider {
+    width: 100%;
+    border: 1px solid $silver
+}
+
+
+@media(min-width: $lg) {
+
+    .filter__category--title {
+        font-size: 22px;
+        line-height: 24px;
+    }
+
+    .filter__category--list {
+        margin-top: 43px;
+    }
+    
+
+
+    .filter__category--listItems {
+        margin-bottom: 40px;
+    }
+
+}

@@ -1,0 +1,38 @@
+
+
+.nav__wrapper {
+    padding: 40px 19px  32px 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__cart {
+    position: relative;
+}
+
+.nav__cart--button {
+    position: relative;
+}
+
+.nav__cart--counter {
+    background: $black;
+    position: absolute;
+    left: 80%;
+    bottom: -35%;
+    width: auto;
+    color: $white;
+    padding: 1px 4px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 22px;
+text-align: center;
+letter-spacing: 0.07em;
+border: 1px solid $black;
+}
+
+@media(min-width: $lg) {
+    .nav__wrapper {
+        padding: 57px 0px  42px 0px;
+    }
+}

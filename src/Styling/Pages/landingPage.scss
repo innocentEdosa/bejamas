@@ -1,0 +1,332 @@
+.landingPage__featured {
+    padding: 32px 4px 48px 4px;
+
+    &--heading {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 35px;
+    }
+
+    &--productCard {
+        margin-top: 35px;
+        height: 239px;
+        width: 100%;
+    }
+
+    &--top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &--topCta {
+        display: none;
+
+        &__btn {
+            display: inline-block;
+            padding: 13px 39px;
+        }
+    }
+
+    &--bottomCta {
+        margin-top: 30px;
+
+        &__btn {
+            display: inline-block;
+            padding: 17px 0px;
+        }
+    }
+}
+
+.landingPage__featuredDetails {
+    margin-top: 30px;
+
+    &--heading {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 33px;
+
+    }
+
+    &--category {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 24px;
+        color: $dimGray;
+        margin-top: 16px;
+        display: none;
+        text-transform: capitalize;
+    }
+
+    &--description {
+        margin-top: 34px;
+        font-size: 18px;
+        line-height: 27px;
+        color: $dimGray;
+    }
+
+    &--right {
+        margin-top: 30px;
+    }
+
+    &--lead {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 24px;
+    }
+
+    &--productList {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    &--product {
+        width: calc(33.333333333333% - 10px);
+        height: 122.58px;
+
+        &:nth-child(even) {
+            margin: 0px 30px;
+        }
+    }
+
+    &--spec {
+        margin-top: 40px;
+    }
+
+    &--specHeading {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 24px;
+        margin-bottom: 23.15px;
+    }
+
+    &--specDetails {
+        display: block;
+        font-size: 22px;
+        line-height: 24px;
+        color: $dimGray;
+        padding-bottom: 14px;
+    }
+}
+
+.landingPage__productSection {
+    padding-top: 51px;
+    padding-bottom: 51px;
+}
+
+.productSection {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 16px;
+
+        &--category {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 20px;
+            color: #000000;
+
+            & > .sub {
+                font-weight: normal;
+                color: $dimGray;
+            }
+        }
+
+        &--sort {
+            display: none;
+        }
+    }
+
+    &__products {
+        margin-top: 21px;
+
+        &--filter {
+            display: none;
+        }
+
+        &--list {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+        &--product {
+            margin-bottom: 32px;
+            & > .productCard {
+                height: 502px;
+            }
+
+            & > .details {
+                padding-top: 8px;
+                text-transform: capitalize;
+
+                & > .category {
+                    font-weight: bold;
+                    font-size: 22px;
+                    line-height: 24px;
+                    color: $dimGray;
+
+                }
+
+                & > .title {
+                    padding-top: 15px;
+                    font-weight: bold;
+                    font-size: 34px;
+                    line-height: 37px;
+                }
+
+                & > .amount {
+                    padding-top: 22px;
+                    font-size: 29px;
+                    line-height: 32px;
+                    color: $dimGray;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $lg) {
+    .landingPage__featured {
+        padding: 62px 4px 65px 4px;
+
+        &--productCard {
+            margin-top: 31px;
+            height: 553px;
+        }
+
+        &--topCta {
+            display: block;
+        }
+
+        &--bottomCta {
+            display: none;
+        }
+    }
+
+    .landingPage__productSection {
+        padding-top: 68px;
+        padding-bottom: 68px;
+    }
+
+
+    .landingPage__featuredDetails {
+        margin-top: 46px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        &--left {
+            width: 53.48%;
+            flex-shrink: 0;
+        }
+
+        &--description {
+            margin-top: 12px;
+        }
+
+        &--heading {
+            line-height: 24px;
+        }
+
+        &--category {
+            display: block;
+        }
+
+        &--right {
+            margin-top: 0px;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        &--product {
+            height: 147px;
+        }
+
+        &--spec {
+            text-align: right;
+            margin-top: 54px;
+        }
+
+        &--specDetails {
+            font-size: 16px;
+            line-height: 17px;
+        }
+    }
+
+    .productSection {
+        &__header {
+            padding: 0px;
+
+            &--category {
+                font-size: 30px;
+                line-height: 33px;
+            }
+            &--filter {
+                display: none;
+            }
+            &--sort {
+                display: block;
+            }
+        }
+
+        &__products {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 59px;
+
+            &--filter {
+                display: block;
+                width: calc(100% - 73.2558139535%);
+                margin-right: 50px;
+            }
+            &--list {
+                padding: 0px;
+                width: 73.2558139535%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-shrink: 0;
+                justify-content: space-between;
+            }
+
+            &--product {
+                width: calc(33.333333333333% - 24px);
+                margin-bottom: 52.55px;
+
+                &:nth-child(3n+2) {
+                    margin: 0px 24px;
+                }
+
+                & > .productCard {
+                    height: 398.72px;
+
+                }
+
+                & > .details {
+                    padding-top: 11px;
+    
+                
+    
+                    & > .title {
+                        padding-top: 4px;
+                    }
+    
+                    & > .amount {
+                        padding-top: 4px;
+                    }
+                }
+            }
+
+           
+        }
+    }
+}
+
+@media (min-width: $xlg) {
+    .landingPage__featuredDetails {
+        &--right {
+            width: 32.25%;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.sort {
+    display: flex;
+    align-items: center;
+
+    &__direction {
+        padding: 0px 7px 0px 48px;
+    }
+
+    &__type {
+        font-weight: normal;
+        font-size: 22px;
+line-height: 24px;
+color: $nobel;
+    }
+
+    &__select {
+        margin-left: 15px;
+    }
+}

@@ -1,0 +1,52 @@
+.checkBox {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.checkBox__input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkBox__mark {
+    height: 37px;
+    width: 37px;
+    background-color: $white;
+    border: 4px solid $black;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.checkBox__input:checked ~ .checkBox__mark {
+    background-image: url("../../Assets/Icons/check.svg");
+}
+
+.checkBox__label {
+    margin-left: 20px;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 30px;
+    color: $nero;
+}
+
+@media (min-width: $lg) {
+    .checkBox__label {
+        margin-left: 23px;
+        font-size: 22px;
+        line-height: 24px;
+    }
+
+    .checkBox__mark {
+        height: 23px;
+        width: 23px;
+        border: 2px solid $black;
+    }
+}

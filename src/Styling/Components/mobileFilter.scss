@@ -1,0 +1,59 @@
+.mobileFilter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  background-color: $white;
+}
+
+.mobileFilter__filter {
+  padding: 19px 36px;
+  height: 100%;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.mobileFilter__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+padding-bottom: 19px;
+  &--heading {
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 37px;
+  }
+}
+
+.mobileFilter__filter--filter {
+    height: calc(100% - 113px - 37px);
+    padding-top: 39px;
+    overflow: scroll;
+
+}
+
+.mobileFilter__actions {
+  position: absolute;
+  z-index: 15;
+  bottom: 0;
+  width: 100%;
+  border-top: 4px solid $gainsBoro;
+  padding: 31px 16px 25px 16px;
+  display: flex;
+  align-items: center;
+  background-color: $white;
+}
+
+.mobileFilter__actions-btn {
+  width: calc(50% - 10px);
+  margin-right: 20px;
+}
+.mobileFilter__actions-btn:last-child {
+  margin-right: 0px;
+}
+
+.mobileFiler__actions--cta {
+  padding: 14px 0px;
+}
