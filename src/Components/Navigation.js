@@ -9,7 +9,14 @@ import useCart from '../Hooks/useCart'
 
 const Navigation = () => {
 
-  const { cartProductCount } = useCart()
+  const { cartProductCount , openCartDropdown } = useCart()
+
+  const openProductDropdown = () => {
+    if(cartProductCount) {
+      openCartDropdown()
+    }
+    return;
+  }
 
   const renderLogo = () => {
     return (
@@ -24,7 +31,7 @@ const Navigation = () => {
   const renderCart = () => {
     return (
       <div className="nav__cart">
-        <button type="button" className="nav__cart--button">
+        <button onClick={openProductDropdown} type="button" className="nav__cart--button">
           <img width="32" height="32" src={cartIcon} alt="cart icon" />
         </button>
         {!!cartProductCount && <div className="nav__cart--counter">{cartProductCount}</div>}

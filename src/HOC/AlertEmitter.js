@@ -6,10 +6,8 @@ const AlertEmitter = ({ emitterReference, children }) => {
     show: false,
     autoClose: false,
     duration: 2000,
-    variant: "BOTTOM_RIGHT",
+    variant: "TOP_RIGHT",
     content: "",
-    severity: "info",
-    style: "",
   });
 
   emitter.on(emitterReference, (content, options) => {

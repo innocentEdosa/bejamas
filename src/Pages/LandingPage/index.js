@@ -1,8 +1,9 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../../Context/Product";
 import {
   fetchProductListAction,
   fetchFeaturedProduct,
+  fetchProductCategoryAction
 } from "../../Context/Product/action";
 import ProductCard from "../../Components/ProductCard";
 import AddToCardButton from "../../Components/AddToCartButton";
@@ -20,10 +21,32 @@ const LandingPage = () => {
       featuredProduct,
       products,
       fetchingProductList,
+      category,
     },
     dispatch,
   } = useContext(ProductContext);
 
+  const [sortState, setSortState] = useState({
+    sort: "",
+    direction: true,
+  });
+
+  const sortHandler = ({ sortBy, direction }) => {
+    setSortState({
+      sort: sortBy,
+      direction,
+    });
+  };
+  const [filterState, setFilterState] = useState([]);
+
+  const filterHandler = (list) => {
+    setFilterState(list);
+  };
+
+
+  useEffect(() => {
+      dispatch(fetchProductCategoryAction)
+  }, [dispatch])
   useEffect(() => {
     dispatch(fetchFeaturedProduct());
   }, [dispatch]);
@@ -31,10 +54,12 @@ const LandingPage = () => {
   useEffect(() => {
     dispatch(
       fetchProductListAction({
-        filter: [],
+        filter: filterState,
+        sort: sortState?.sort,
+        direction: sortState?.direction,
       })
     );
-  }, [dispatch]);
+  }, [dispatch, sortState, filterState]);
 
   const {
     isInCart: isFeaturedProductInCart,
@@ -147,10 +172,13 @@ const LandingPage = () => {
         </h6>
         <div>
           <div className="productSection__header--filter">
-            <MobileProductFilter />
+            <MobileProductFilter category={category} filterHandler={filterHandler} />
           </div>
           <div className="productSection__header--sort">
-            <Sort />
+            <Sort
+              sortHandler={sortHandler}
+              options={["price", "alphabetically"]}
+            />
           </div>
         </div>
       </div>
@@ -161,7 +189,7 @@ const LandingPage = () => {
     return (
       <div className="productSection__products">
         <div className="productSection__products--filter">
-          <Filter />
+          <Filter filterHandler={filterHandler} category={category} />
         </div>
 
         <div className="productSection__products--list">

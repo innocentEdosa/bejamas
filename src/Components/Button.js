@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
 
-const Button = ({ type, onClick, children, primary, disabled}) => {
+const Button = ({ type, onClick, children, primary, secondary, disabled}) => {
   return (
     <button
       onClick={onClick}
@@ -10,6 +10,7 @@ const Button = ({ type, onClick, children, primary, disabled}) => {
       className={clsx({
         button: true,
         "button--primary": primary,
+        "button--secondary": secondary
       })}
     >
       {children}
@@ -26,5 +27,6 @@ Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node,
   primary: PropTypes.bool,
+  secondary: PropTypes.bool,
 };
 export default Button;

@@ -4,6 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.07em;
 }
 
 .button:disabled,
@@ -14,9 +19,12 @@
 .button--primary {
     background-color: $black;
     color: $white;
+
+}
+
+.button--secondary {
+    background-color: $white;
+    border: 3px solid $black;
+    color: $black;
     font-weight: 500;
-font-size: 23px;
-line-height: 25px;
-text-align: center;
-letter-spacing: 0.07em;
 }

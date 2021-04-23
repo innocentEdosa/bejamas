@@ -6,6 +6,8 @@ import {
   FETCHING_PRODUCT_LIST,
   FETCHING_PRODUCT_LIST_COMPLETE,
   FETCHING_PRODUCT_LIST_FAILED,
+
+  PRODUCT_CATEGORY,
   
 } from './types';
 
@@ -14,11 +16,16 @@ export const initialState = {
     fetchingProductList: false,
     featuredProduct: {},
     fetchingFeaturedProduct: false,
-    products: {}
+    products: {},
+    category: []
 };
 
 export const productReducer = (state = initialState, action) => {
   switch (action.type) {
+    case PRODUCT_CATEGORY: return ({
+      ...state,
+      category: action?.category
+    })
     case FETCHING_FEATURED_PRODUCT: return ({
       ...state,
       fetchingFeaturedProduct: true,
