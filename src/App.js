@@ -16,7 +16,7 @@ const LandingPage = lazy(() => import('./Pages/LandingPage'))
 
 function App() {
   return (
-    // <Alert portal="#portal-root">
+    <Alert portal="#portal-root">
     <Layout>
       <ProductContext>
         <CartContext>
@@ -33,8 +33,7 @@ function App() {
         </CartContext>
       </ProductContext>
     </Layout>
-
-    // </Alert>
+    </Alert>
   );
 }
 

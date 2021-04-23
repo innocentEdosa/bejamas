@@ -1,10 +1,8 @@
-import React, { useRef, useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import AlertEmitter from './AlertEmitter';
+import React, { useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
+import AlertEmitter from "./AlertEmitter";
 
-export const position = {
-
-};
+export const position = {};
 const Alert = ({ children, portal }) => {
   const portalRef = useRef(null);
 
@@ -12,14 +10,15 @@ const Alert = ({ children, portal }) => {
     portalRef.current = document.querySelector(portal);
   });
 
-  const getClass = (variant) => {
-    const defaultClass = 'absolute mx-0 md:mx-12 my-12  z-50 w-full md:w-auto h-auto';
+  const getClass = (variant, classes) => {
+    const defaultClass = `alert ${classes}`;
     switch (variant) {
-      case 'BOTTOM_RIGHT': return `
-      ${defaultClass} bottom-0 right-0
+      case "TOP_RIGHT":
+        return `
+      ${defaultClass} alert__top alert__right
       `;
       default:
-        return `${defaultClass} top-0 left-0 `;
+        return `${defaultClass} alert__bottom alert__right `;
     }
   };
 
@@ -27,20 +26,20 @@ const Alert = ({ children, portal }) => {
     <>
       {children}
       <AlertEmitter emitterReference="mainAlert">
-        {({
-          show, variant, content, onClose,
-        }) => {
-          const className = getClass(variant);
+        {({ show, variant, content, onClose, classes }) => {
+          const className = getClass(variant, classes);
           return (
-            show
-            && portalRef.current
-            && createPortal(
+            show &&
+            portalRef.current &&
+            createPortal(
               <div className={className}>
-                {React.Children.map(content, (child) => React.cloneElement(child, {
-                  close: onClose,
-                }))}
+                {React.Children.map(content, (child) =>
+                  React.cloneElement(child, {
+                    close: onClose,
+                  })
+                )}
               </div>,
-              portalRef.current,
+              portalRef.current
             )
           );
         }}

@@ -4,7 +4,10 @@ import Filter from './Filter';
 import closeIcon from '../Assets/Icons/close.svg';
 import Button from './Button';
 
-const MobileProductFilter = () => {
+const MobileProductFilter = ({
+    filterHandler,
+    category,
+}) => {
   const { modal, openModal, closeModal } = useModal();
 
 
@@ -18,18 +21,18 @@ const MobileProductFilter = () => {
           </button>
         </div>
         <div className="mobileFilter__filter--filter">
-        <Filter />
+        <Filter category={category} filterHandler={filterHandler} />
         </div>
       </div>
       <div className="mobileFilter__actions">
         <div className="mobileFilter__actions-btn">
-          <Button primary>
+          <Button secondary>
             <span className="mobileFiler__actions--cta">CLEAR</span>
           </Button>
         </div>
         <div className="mobileFilter__actions-btn">
           <Button primary>
-            <span className="mobileFiler__actions--cta">CLEAR</span>
+            <span className="mobileFiler__actions--cta">SAVE</span>
           </Button>
         </div>
       </div>

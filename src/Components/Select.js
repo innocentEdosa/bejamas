@@ -1,10 +1,12 @@
-const Select = () => {
+const Select = ({
+  options = [],
+  value,
+  onChange,
+}) => {
   return (
-    <select className="select" name="select" id="cars">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
+    <select onChange={onChange} value={value} className="select" name="select" id="cars">
+      <option selected="true" disabled="disabled"  value="">choose sort</option>
+      {options?.map((value) => <option key={value} value={value}>{value}</option>)}
     </select>
   );
 };

@@ -19,6 +19,7 @@ const AddToCartButton = ({
 AddToCartButton.propTypes = {
   classes: PropTypes.string,
   onClick: PropTypes.func,
+  inCart: PropTypes.bool,
 }
 
 

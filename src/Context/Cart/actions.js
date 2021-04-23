@@ -6,4 +6,4 @@ export const addToCartAction = (product) => (dispatch) =>
 export const removeFromCartAction = (product) => (dispatch) =>
   dispatch({ type: REMOVE_FROM_CART, product });
 
-export const clearCart = (dispatch) => dispatch({ type: CLEAR_CART });
+export const clearCartAction = (dispatch) => dispatch({ type: CLEAR_CART });
